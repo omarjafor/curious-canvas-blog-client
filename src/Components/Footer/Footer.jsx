@@ -3,15 +3,15 @@ import logo from './../../../public/logo.png'
 
 const Footer = () => {
     return (
-        <div className="flex items-end w-full bg-white">
+        <div className="flex items-end w-full">
 
-            <footer className="w-full text-gray-700 bg-gradient-to-br from-blue-500  to-cyan-500 hover:bg-gradient-to-tl body-font">
+            <footer className="w-full text-gray-700 bg-gradient-to-br from-blue-500  to-cyan-500 hover:bg-gradient-to-tl body-font dark:from-gray-700 dark:via-gray-900 dark:to-black">
                 <div
                     className="container flex flex-col flex-wrap px-5 py-20 mx-auto md:items-center lg:items-start md:flex-row md:flex-no-wrap">
                     <div className="flex-shrink-0 w-72 mx-auto text-center md:mx-0 md:text-left">
                         <Link to='/'><img src={logo} alt="" className="h-32" /></Link>
                         
-                        <p className="mt-2 text-sm text-black">No 1 The Blog Explorer For You!</p>
+                        <p className="mt-2 text-sm text-black dark:text-white">No 1 The Blog Explorer For You!</p>
                         <div className="mt-4">
                             <span className="flex lg:justify-start justify-items-center mt-2 justify-center">
 
@@ -32,7 +32,7 @@ const Footer = () => {
                     </div>
                     <div className="flex flex-wrap flex-grow mt-10 -mb-10 text-center md:pl-20 md:mt-0 md:text-left">
                         <div className="w-full px-4 lg:w-1/4 md:w-1/2">
-                            <h2 className="mb-3 text-sm font-bold tracking-widest text-black uppercase title-font">About</h2>
+                            <h2 className="mb-3 text-sm font-bold tracking-widest text-black dark:text-white uppercase title-font">About</h2>
                             <nav className="mb-10 list-none">
                                 <li className="mt-3">
                                     <a className="text-white cursor-pointer hover:text-gray-900">Company</a>
@@ -46,7 +46,7 @@ const Footer = () => {
                             </nav>
                         </div>
                         <div className="w-full px-4 lg:w-1/4 md:w-1/2">
-                            <h2 className="mb-3 text-sm font-bold tracking-widest text-black uppercase title-font">Support</h2>
+                            <h2 className="mb-3 text-sm font-bold tracking-widest text-black dark:text-white uppercase title-font">Support</h2>
                             <nav className="mb-10 list-none">
                                 <li className="mt-3">
                                     <a className="text-white cursor-pointer hover:text-gray-900">Contact Support</a>
@@ -60,7 +60,7 @@ const Footer = () => {
                             </nav>
                         </div>
                         <div className="w-full px-4 lg:w-1/4 md:w-1/2">
-                            <h2 className="mb-3 text-sm font-bold tracking-widest text-black uppercase title-font">Platform
+                            <h2 className="mb-3 text-sm font-bold tracking-widest text-black dark:text-white uppercase title-font">Platform
                             </h2>
                             <nav className="mb-10 list-none">
                                 <li className="mt-3">
@@ -75,7 +75,7 @@ const Footer = () => {
                             </nav>
                         </div>
                         <div className="w-full px-4 lg:w-1/4 md:w-1/2">
-                            <h2 className="mb-3 text-sm font-bold tracking-widest text-black uppercase title-font">Contact</h2>
+                            <h2 className="mb-3 text-sm font-bold tracking-widest text-black dark:text-white uppercase title-font">Contact</h2>
                             <nav className="mb-10 list-none">
                                 <li className="mt-3">
                                     <a className="text-white cursor-pointer hover:text-gray-900">Send a Message</a>
@@ -90,7 +90,7 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <div className="bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 ">
+                <div className="bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 dark:bg-gradient-to-l dark:from-gray-700 dark:via-gray-900 dark:to-black">
                     <div className="container px-5 py-4 mx-auto">
                         <p className="text-sm text-white font-medium capitalize text-center">© 2023 All rights reserved by OMAR JAFOR</p>
                     </div>
