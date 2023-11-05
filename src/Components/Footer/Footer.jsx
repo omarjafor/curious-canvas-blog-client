@@ -1,4 +1,5 @@
-
+import { Link } from "react-router-dom";
+import logo from './../../../public/logo.png'
 
 const Footer = () => {
     return (
@@ -6,11 +7,10 @@ const Footer = () => {
 
             <footer className="w-full text-gray-700 bg-gradient-to-br from-blue-500  to-cyan-500 hover:bg-gradient-to-tl body-font">
                 <div
-                    className="container flex flex-col flex-wrap px-5 py-24 mx-auto md:items-center lg:items-start md:flex-row md:flex-no-wrap">
+                    className="container flex flex-col flex-wrap px-5 py-20 mx-auto md:items-center lg:items-start md:flex-row md:flex-no-wrap">
                     <div className="flex-shrink-0 w-72 mx-auto text-center md:mx-0 md:text-left">
-                        <a className="flex items-center justify-center font-medium text-gray-900 title-font md:justify-start">
-                            <h1 className="text-4xl text-black font-bold">Curious Canvas</h1>
-                        </a>
+                        <Link to='/'><img src={logo} alt="" className="h-32" /></Link>
+                        
                         <p className="mt-2 text-sm text-black">No 1 The Blog Explorer For You!</p>
                         <div className="mt-4">
                             <span className="flex lg:justify-start justify-items-center mt-2 justify-center">

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink } from "react-router-dom";
 import logo from './../../../public/logo.png'
+import useAuth from '../../Hooks/useAuth';
 
 const Navbar = () => {
 
