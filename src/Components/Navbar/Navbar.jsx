@@ -53,19 +53,19 @@ const Navbar = () => {
                 className={({ isActive, isPending }) =>
                     isPending ? "pending" : isActive ? "text-green-300 text-xl font-bold underline outline-offset-8" : "font-bold lg:text-white text-lg"}
             >Home</NavLink></li>
-            <li><NavLink to='/addproduct'
+            <li><NavLink to='/addblog'
                 className={({ isActive, isPending }) =>
                     isPending ? "pending" : isActive ? "text-green-300 text-xl font-bold underline outline-offset-8" : "font-bold lg:text-white text-lg"}
             >Add Blog</NavLink></li>
-            <li><NavLink to='/addproduct'
+            <li><NavLink to='/allblogs'
                 className={({ isActive, isPending }) =>
                     isPending ? "pending" : isActive ? "text-green-300 text-xl font-bold underline outline-offset-8" : "font-bold lg:text-white text-lg"}
             >All Blogs</NavLink></li>
-            <li><NavLink to='/addproduct'
+            <li><NavLink to='/featuredblogs'
                 className={({ isActive, isPending }) =>
                     isPending ? "pending" : isActive ? "text-green-300 text-xl font-bold underline outline-offset-8" : "font-bold lg:text-white text-lg"}
             >Featured Blogs</NavLink></li>
-            <li><NavLink to='/mybookings'
+            <li><NavLink to='/wishlist'
                 className={({ isActive, isPending }) =>
                     isPending ? "pending" : isActive ? "text-green-300 text-xl font-bold underline outline-offset-8" : "font-bold lg:text-white text-lg"}
             >Wishlist</NavLink></li>

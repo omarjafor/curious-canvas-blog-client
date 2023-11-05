@@ -6,6 +6,10 @@ import Register from "../Pages/Register/Register";
 import Home from "../Pages/Home/Home";
 import Profile from "../Pages/Profile/Profile";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import AddBlog from "../Pages/AddBlog/AddBlog";
+import AllBlogs from "../Pages/AllBlogs/AllBlogs";
+import FeaturedBlogs from "../Pages/FeaturedBlogs/FeaturedBlogs";
+import Wishlist from "../Pages/Wishlist/Wishlist";
 
 
 const Router = createBrowserRouter([
@@ -15,13 +19,29 @@ const Router = createBrowserRouter([
         errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
-                path: '/',
+                path: '',
                 element: <Home></Home>
             },
             {
                 path: 'profile',
                 element: <PrivateRoute><Profile></Profile></PrivateRoute>
             },
+            {
+                path: 'addblog',
+                element: <PrivateRoute><AddBlog></AddBlog></PrivateRoute>
+            },
+            {
+                path: 'allblogs',
+                element: <AllBlogs></AllBlogs>
+            },
+            {
+                path: 'featuredblogs',
+                element: <FeaturedBlogs></FeaturedBlogs>
+            },
+            {
+                path: 'wishlist',
+                element: <Wishlist></Wishlist>
+            }
         ]
     },
     {
