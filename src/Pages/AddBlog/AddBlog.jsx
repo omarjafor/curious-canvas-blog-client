@@ -39,14 +39,14 @@ const AddBlog = () => {
             <Helmet>
                 <title>Curious Canvas | Add Blog</title>
             </Helmet>
-            <h2 className="text-3xl text-center font-extrabold mb-3 drop-shadow-[-1px_3px_1px_rgba(17,131,6,0.6)] bg-gradient-to-br from-green-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">Add Your New Blog</h2>
-            <p className="text-2xl text-center font-bold mb-10 drop-shadow-[-1px_3px_1px_rgba(17,131,6,0.6)] bg-gradient-to-br from-green-200 via-blue-500 to-purple-600 bg-clip-text text-transparent">Give Your Entire Blog Details Here</p>
+            <h2 className="text-3xl text-center font-extrabold mb-3 drop-shadow-[-1px_3px_1px_rgba(17,131,6,0.6)] bg-gradient-to-br from-rose-400 via-fuchsia-500 to-indigo-500 bg-clip-text text-transparent">Add Your New Blog</h2>
+            <p className="text-2xl text-center font-bold mb-10 drop-shadow-[-1px_3px_1px_rgba(17,131,6,0.6)] bg-gradient-to-br from-rose-400 via-fuchsia-500 to-indigo-500 bg-clip-text text-transparent">Give Your Entire Blog Details Here</p>
             <form onSubmit={handleAddBlog} >
                 {/* form name and quantity row */}
                 <div className="md:flex mb-8 md:justify-center md:justify-items-center">
                     <div className="form-control md:w-1/3">
                         <label className="label">
-                            <span className="font-bold text-lg text-blue-600">Blog Title</span>
+                            <span className="font-bold text-lg text-purple-600">Blog Title</span>
                         </label>
                         <label className="input-group">
                             <input type="text" name="name" placeholder="Blog Name" className="input input-bordered w-full" />
@@ -54,7 +54,7 @@ const AddBlog = () => {
                     </div>
                     <div className="form-control md:w-1/3 ml-4">
                         <label className="label">
-                            <span className="font-bold text-lg text-blue-600">Blog Category</span>
+                            <span className="font-bold text-lg text-purple-600">Blog Category</span>
                         </label>
                         <select className="select select-info w-full max-w-xs" name="category">
                             <option>Fashion and Lifestyle</option>
@@ -74,7 +74,7 @@ const AddBlog = () => {
                 <div className="md:flex mb-8 md:justify-center md:justify-items-center">
                     <div className="form-control md:w-1/3">
                         <label className="label">
-                            <span className="font-bold text-lg text-blue-600">Long Description</span>
+                            <span className="font-bold text-lg text-purple-600">Long Description</span>
                         </label>
                         <label className="input-group">
                             <input type="text" name="longDescription" placeholder="Long Description" className="input input-bordered w-full" />
@@ -82,7 +82,7 @@ const AddBlog = () => {
                     </div>
                     <div className="form-control md:w-1/3 ml-4">
                         <label className="label">
-                            <span className="font-bold text-lg text-blue-600">Photo URL</span>
+                            <span className="font-bold text-lg text-purple-600">Photo URL</span>
                         </label>
                         <label className="input-group">
                             <input type="text" name="photo" placeholder="Photo URL" className="input input-bordered w-full" />
@@ -93,7 +93,7 @@ const AddBlog = () => {
                 <div className="md:flex mb-8 md:justify-center md:justify-items-center">
                     <div className="form-control md:w-1/3">
                         <label className="label">
-                            <span className="font-bold text-lg text-blue-600">Short Description</span>
+                            <span className="font-bold text-lg text-purple-600">Short Description</span>
                         </label>
                         <label className="input-group">
                             <input type="text" name="shortDescription" placeholder="Short Description" className="input input-bordered w-full" />
@@ -101,7 +101,7 @@ const AddBlog = () => {
                     </div>
                     <div className="form-control md:w-1/3 ml-4">
                         <label className="label">
-                            <span className="font-bold text-lg text-blue-600">Ratings</span>
+                            <span className="font-bold text-lg text-purple-600">Ratings</span>
                         </label>
                         <label className="input-group">
                             <input type="text" name="rating" placeholder="Ratings" className="input input-bordered w-full" />
@@ -110,7 +110,7 @@ const AddBlog = () => {
                 </div>
                 {/* form submit button row */}
                 <div className="mx-auto text-center">
-                    <input type="submit" value="Submit Your Blog" className="btn btn-block bg-blue-500 hover:bg-green-500 text-white hover:text-black md:w-1/4" />
+                    <input type="submit" value="Submit Your Blog" className="btn btn-block bg-purple-500 hover:bg-green-500 text-white hover:text-black md:w-1/4" />
                 </div>
             </form>
         </div>

@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <div className="flex items-end w-full">
 
-            <footer className="w-full text-gray-700 bg-gradient-to-br from-blue-500  to-cyan-500 hover:bg-gradient-to-tl body-font dark:from-gray-700 dark:via-gray-900 dark:to-black">
+            <footer className="w-full text-gray-700 bg-gradient-to-br from-rose-400 via-fuchsia-500 to-indigo-500 hover:bg-gradient-to-tl body-font dark:from-gray-700 dark:via-gray-900 dark:to-black">
                 <div
                     className="container flex flex-col flex-wrap px-5 py-20 mx-auto md:items-center lg:items-start md:flex-row md:flex-no-wrap">
                     <div className="flex-shrink-0 w-72 mx-auto text-center md:mx-0 md:text-left">

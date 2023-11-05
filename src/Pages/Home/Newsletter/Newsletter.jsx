@@ -6,7 +6,7 @@ const Newsletter = () => {
         e.preventDefault();
         Swal.fire(
             'Good Job!',
-            'Newsletter Notifyed Successfull',
+            'Thank You For Subscribing To Our Newsletter',
             'success'
         )
     }
