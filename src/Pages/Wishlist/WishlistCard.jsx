@@ -2,15 +2,26 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import ReactStars from 'react-stars';
 import useAuth from "../../Hooks/useAuth";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
-const WishlistCard = ({ blog, wishlistBlog, setWishlistBlog } ) => {
+const WishlistCard = ({ blog } ) => {
+    const queryClient = useQueryClient()
 
     const { user } = useAuth();
 
     const { _id, blogTitle, blogCategory, shortDescription, photo, rating, blogId } = blog || {} ;
 
-    const handleRemove = id => {
-        Swal.fire({
+    const { mutateAsync } = useMutation({
+        mutationFn: async (id) => await fetch(`http://localhost:5000/wishlist/${id}`, {
+            method: 'DELETE'
+        }),
+        onSuccess: () => {
+            queryClient.invalidateQueries(['wishlist'])
+        },
+    })
+
+    const handleRemove = async id => {
+       await Swal.fire({
             title: 'Are you sure?',
             text: "Blog Will Be Deleted From Wishlist",
             icon: 'warning',
@@ -20,23 +31,16 @@ const WishlistCard = ({ blog, wishlistBlog, setWishlistBlog } ) => {
             confirmButtonText: 'Sure, Delete it'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/wishlist/${id}`, {
-                    method: 'DELETE'
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        console.log(data);
-                        if (data.deletedCount > 0) {
-                            Swal.fire(
-                                'Deleted!',
-                                'Your Wishlist Blog has been Deleted',
-                                'success'
-                            )
-                            const remainBlog = wishlistBlog?.filter(blog => blog?._id !== id);
-                            setWishlistBlog(remainBlog);
-                        }
-                    })
-
+                try{
+                    mutateAsync(id)
+                    Swal.fire(
+                        'Deleted!',
+                        'Your Wishlist Blog has been Deleted',
+                        'success'
+                    ) 
+                } catch (err) {
+                    console.log(err);
+                }
             }
         })
     }

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import ReactStars from 'react-stars';
 import useAuth from "../../../Hooks/useAuth";
 import toast from "react-hot-toast";
+import { useMutation } from "@tanstack/react-query";
 
 const PostCard = ({ blog }) => {
     const { user } = useAuth();
@@ -10,23 +11,29 @@ const PostCard = ({ blog }) => {
     const { _id, blogTitle, blogCategory, longDescription, shortDescription, photo, rating } = blog || {};
     const blogId = _id;
 
-    const handlewishlist = e => {
-        e.preventDefault();
-        const wishlistBlog = { blogTitle, blogCategory, shortDescription, longDescription, photo, rating, email, blogId }
-        console.log(wishlistBlog);
-
-        fetch('http://localhost:5000/wishlist', {
+    const { mutateAsync } = useMutation({
+        mutationFn: async (wishlistBlog) => await fetch('http://localhost:5000/wishlist', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
             body: JSON.stringify(wishlistBlog)
         })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                toast.success('Added To Wishlist Successful');
-            })
+    })
+
+    const handlewishlist = async e => {
+        e.preventDefault();
+        const wishlistBlog = { blogTitle, blogCategory, shortDescription, longDescription, photo, rating, email, blogId }
+        console.log(wishlistBlog);
+
+        try{
+            await mutateAsync(wishlistBlog)
+            toast.success('Added To Wishlist Successful');
+        } catch(err){
+            toast.error('Something went wrong! Try Again😒')
+            console.log(err);
+        }
+
     }
 
     return (

@@ -5,14 +5,14 @@ import useAuth from './useAuth';
 const useWishlist = () => {
     const { user } = useAuth();
     
-    const { isPending, data } = useQuery({
+    const { data: wishlistBlog, isLoading } = useQuery({
         queryKey: ['wishlist'],
         queryFn: async () => await fetch(`http://localhost:5000/wishlist?email=${user?.email}`).then(
             (res) => res.json(),
         ),
     })
 
-    return { isPending, data };
+    return { isLoading, wishlistBlog };
 };
 
 export default useWishlist;
