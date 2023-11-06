@@ -40,11 +40,11 @@ const Wishlist = () => {
             </div>
             {wishlistBlog?.length == 0 &&
                 <div className="flex justify-center text-center justify-items-center items-center mx-10">
-                    <div className="my-6">
-                        <img src="https://i.ibb.co/Qc5WQgQ/emptycart.png" alt="" className='h-[450px]' />
-                        <h2 className="text-black font-bold text-3xl mb-3 drop-shadow-[-1px_3px_1px_rgba(17,131,6,0.6)] bg-gradient-to-br from-green-500 via-blue-500 to-purple-600 bg-clip-text text-transparent">Your Wishlist is Empty! Browse Our Blogs!</h2>
+                    <div className="my-4">
+                        <img src="https://i.ibb.co/gm0NJvs/wishlist.webp" alt="" className='h-[450px]' />
+                        <h2 className="text-black font-bold text-3xl my-3 drop-shadow-[-1px_3px_1px_rgba(17,131,6,0.6)] bg-gradient-to-br from-green-500 via-blue-500 to-purple-600 bg-clip-text text-transparent">Your Wishlist Blog is Empty! Browse Blogs!</h2>
                         <Link to='/'
-                            className="block w-3/5 select-none rounded-lg bg-blue-500 hover:bg-green-500 py-3 px-3 font-bold uppercase text-white hover:text-black transition-all hover:scale-105 focus:scale-105 focus:opacity-[0.85] active:scale-100 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none mx-auto"
+                            className="block w-3/5 select-none rounded-lg bg-gradient-to-br from-rose-400 via-fuchsia-500 to-indigo-500 hover:bg-green-500 py-3 px-3 font-bold uppercase text-white hover:text-black transition-all hover:scale-105 focus:scale-105 focus:opacity-[0.85] active:scale-100 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none mx-auto"
                             type="button"
                         >
                             Start Explor Blog
