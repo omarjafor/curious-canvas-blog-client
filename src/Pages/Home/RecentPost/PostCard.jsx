@@ -5,14 +5,14 @@ import toast from "react-hot-toast";
 
 const PostCard = ({ blog }) => {
     const { user } = useAuth();
-    const email = user?.email ;
+    const email = user?.email;
 
-    const { _id, blogTitle, blogCategory, longDescription, shortDescription, photo, rating  } = blog || {};
+    const { _id, blogTitle, blogCategory, longDescription, shortDescription, photo, rating } = blog || {};
     const blogId = _id;
 
     const handlewishlist = e => {
         e.preventDefault();
-        const wishlistBlog = { blogTitle, blogCategory, shortDescription, longDescription, photo, rating, email, blogId}
+        const wishlistBlog = { blogTitle, blogCategory, shortDescription, longDescription, photo, rating, email, blogId }
         console.log(wishlistBlog);
 
         fetch('http://localhost:5000/wishlist', {

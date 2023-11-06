@@ -21,15 +21,15 @@ const Wishlist = () => {
     </div>;
 
     return (
-        <div className='lg:mx-12'>
+        <div className='lg:px-12 dark:bg-gray-900'>
             <Helmet>
                 <title>Curious Canvas | Wishlist</title>
             </Helmet>
-            <div className='mt-10 py-10 text-center'>
-                <h1 className='text-4xl font-bold drop-shadow-[-1px_3px_1px_rgba(17,131,6,0.6)] bg-gradient-to-br from-green-300 via-blue-500 to-purple-600 bg-clip-text text-transparent'>Dear {name} Wishlist</h1>
-                <p className='max-w-3xl mx-auto my-4 text-base text-green-600'> {email} </p>
+            <div className='py-16 text-center'>
+                <h1 className='text-4xl font-bold drop-shadow-[-1px_3px_1px_rgba(17,131,6,0.6)] bg-gradient-to-br from-rose-400 via-fuchsia-500 to-indigo-500 bg-clip-text text-transparent'>Dear {name} Wishlist</h1>
+                <p className='max-w-3xl mx-auto my-4 text-base text-indigo-600'> {email} </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-24 mb-12 justify-items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-24 pb-12 justify-items-center">
                 {
                     data?.map(blog => <WishlistCard
                     blog={blog}
