@@ -13,6 +13,7 @@ const Wishlist = () => {
     const [wishlistBlog, setWishlistBlog] = useState(data);
     const name = user?.displayName;
     const email = user?.email;
+    
 
     if (isPending) return <div className="mx-auto items-center text-center">
         <Skeleton count={10} />
@@ -21,7 +22,8 @@ const Wishlist = () => {
         <span className="loading loading-dots loading-lg text-info"></span>
         <Skeleton count={10} />
     </div>;
-
+    
+    console.log(data, wishlistBlog);
     return (
         <div className='lg:px-12 dark:bg-gray-900'>
             <Helmet>
@@ -41,7 +43,7 @@ const Wishlist = () => {
                     ></WishlistCard>)
                 }
             </div>
-            {data?.length == 0 &&
+            {wishlistBlog?.length == 0 &&
                 <div className="flex justify-center text-center justify-items-center items-center mx-10">
                     <div className="my-6">
                         <img src="https://i.ibb.co/Qc5WQgQ/emptycart.png" alt="" className='h-[450px]' />

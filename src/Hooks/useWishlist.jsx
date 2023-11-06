@@ -7,7 +7,7 @@ const useWishlist = () => {
     
     const { isPending, data } = useQuery({
         queryKey: ['wishlist'],
-        queryFn: () => fetch(`http://localhost:5000/wishlist?email=${user?.email}`).then(
+        queryFn: async () => await fetch(`http://localhost:5000/wishlist?email=${user?.email}`).then(
             (res) => res.json(),
         ),
     })

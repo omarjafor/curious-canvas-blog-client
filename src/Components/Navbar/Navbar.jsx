@@ -25,7 +25,6 @@ const Navbar = () => {
         }
     }
 
-
     useEffect(() => {
         const currentMode = localStorage.getItem('mode') || 'light';
         document.documentElement.classList.add(currentMode);

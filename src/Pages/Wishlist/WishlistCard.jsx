@@ -32,7 +32,7 @@ const WishlistCard = ({ blog, wishlistBlog, setWishlistBlog } ) => {
                                 'Your Wishlist Blog has been Deleted',
                                 'success'
                             )
-                            const remainBlog = wishlistBlog.filter(blog => blog?._id !== id);
+                            const remainBlog = wishlistBlog?.filter(blog => blog?._id !== id);
                             setWishlistBlog(remainBlog);
                         }
                     })
