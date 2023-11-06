@@ -1,14 +1,48 @@
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 import ReactStars from 'react-stars';
 import useAuth from "../../Hooks/useAuth";
 
-const WishlistCard = ({ blog } ) => {
+const WishlistCard = ({ blog, wishlistBlog, setWishlistBlog } ) => {
 
-    const { blogTitle, blogCategory, shortDescription, photo, rating, blogId } = blog || {} ;
     const { user } = useAuth();
 
+    const { _id, blogTitle, blogCategory, shortDescription, photo, rating, blogId } = blog || {} ;
+
+    const handleRemove = id => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "Blog Will Be Deleted From Wishlist",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sure, Delete it'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/wishlist/${id}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        if (data.deletedCount > 0) {
+                            Swal.fire(
+                                'Deleted!',
+                                'Your Wishlist Blog has been Deleted',
+                                'success'
+                            )
+                            const remainBlog = wishlistBlog.filter(blog => blog?._id !== id);
+                            setWishlistBlog(remainBlog);
+                        }
+                    })
+
+            }
+        })
+    }
+
     return (
-        <div className="flex flex-col justify-center items-center bg-gray-100">
+        <div className="flex flex-col justify-center rounded-t-lg items-center bg-gray-100">
             <div className="bg-white rounded-lg shadow-lg overflow-hidden max-w-lg w-full">
                 <img src={photo} alt="Mountain" className="w-full h-64 object-cover" />
                 <div className="p-6">
@@ -30,7 +64,7 @@ const WishlistCard = ({ blog } ) => {
                             <span className="text-gray-800 font-semibold"> {user?.displayName} </span>
                         </div>
                         <div className="flex gap-2">
-                            <button 
+                            <button onClick={() => handleRemove(_id)}
                                 className="block w-1/2 select-none rounded-lg bg-blue-600 hover:bg-green-600 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white hover:text-black transition-all hover:scale-105 focus:scale-105 focus:opacity-[0.85] active:scale-100 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                                 type="button"
                             >

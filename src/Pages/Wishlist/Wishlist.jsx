@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link } from "react-router-dom"; 
 import Skeleton from "react-loading-skeleton";
 import useWishlist from "../../Hooks/useWishlist";
@@ -9,6 +10,7 @@ import { Helmet } from "react-helmet-async";
 const Wishlist = () => {
     const { user } = useAuth();
     const { isPending, data } = useWishlist();
+    const [wishlistBlog, setWishlistBlog] = useState(data);
     const name = user?.displayName;
     const email = user?.email;
 
@@ -31,7 +33,9 @@ const Wishlist = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-24 pb-12 justify-items-center">
                 {
-                    data?.map(blog => <WishlistCard
+                    wishlistBlog?.map(blog => <WishlistCard
+                        wishlistBlog={wishlistBlog}
+                        setWishlistBlog={setWishlistBlog}
                     blog={blog}
                     key={blog?._id}
                     ></WishlistCard>)
