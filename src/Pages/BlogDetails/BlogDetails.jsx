@@ -3,13 +3,11 @@ import ReactStars from 'react-stars';
 import { Helmet } from "react-helmet-async";
 import Skeleton from "react-loading-skeleton";
 import { Link, useParams } from "react-router-dom";
-import useAuth from "../../Hooks/useAuth";
 import Comments from "./Comments";
 
 
 const BlogDetails = () => {
     const { id } = useParams();
-    const { user } = useAuth();
 
     const { data: blog, isLoading } = useQuery({
         queryKey: ['blogDetails'],
@@ -26,8 +24,7 @@ const BlogDetails = () => {
         <Skeleton count={10} />
     </div>;
 
-    const { _id, blogTitle, blogCategory, longDescription, shortDescription, rating, photo, timeStamp, email } = blog || {} ;
-
+    const { _id, blogTitle, blogCategory, longDescription, shortDescription, rating, photo, email } = blog || {} ;
 
     return (
         <div className="dark:bg-gray-900">
