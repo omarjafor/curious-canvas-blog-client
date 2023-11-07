@@ -4,13 +4,15 @@ import { Helmet } from "react-helmet-async";
 import Skeleton from "react-loading-skeleton";
 import { Link, useParams } from "react-router-dom";
 import Comments from "./Comments";
+import useAuth from "../../Hooks/useAuth";
 
 
 const BlogDetails = () => {
+    const { user } = useAuth();
     const { id } = useParams();
 
     const { data: blog, isLoading } = useQuery({
-        queryKey: ['blogDetails'],
+        queryKey: ['blogDetails', id],
         queryFn: async () => await fetch(`http://localhost:5000/blogs/${id}`).then(
             (res) => res.json(),
         ),
@@ -87,13 +89,18 @@ const BlogDetails = () => {
                                 color2={'#ffd700'} />
                         </div>
                     </div>
-                    <Link to={`/updateblog/${_id}`}
-                        className="px-5 py-2 my-3 rounded-lg font-bold btn btn-wide bg-gradient-to-br from-rose-400 via-fuchsia-500 to-indigo-500 hover:bg-green-500 text-white hover:text-black">
-                        Update Blog
-                    </Link>
+                    {
+                        user.email == email && <Link to={`/updateblog/${_id}`}
+                            className="px-5 py-2 my-3 rounded-lg font-bold btn btn-wide bg-gradient-to-br from-rose-400 via-fuchsia-500 to-indigo-500 hover:bg-green-500 text-white hover:text-black">
+                            Update Blog
+                        </Link>
+                    }
                 </div>
             </div>
-            <Comments></Comments>
+            <Comments 
+            id={_id}
+                email={email}
+            ></Comments>
         </div>
     );
 };

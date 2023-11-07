@@ -6,7 +6,7 @@ const useWishlist = () => {
     const { user } = useAuth();
     
     const { data: wishlistBlog, isLoading } = useQuery({
-        queryKey: ['wishlist'],
+        queryKey: ['wishlist', user.email],
         queryFn: async () => await fetch(`http://localhost:5000/wishlist?email=${user?.email}`).then(
             (res) => res.json(),
         ),

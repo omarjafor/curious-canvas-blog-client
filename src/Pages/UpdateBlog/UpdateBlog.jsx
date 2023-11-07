@@ -10,7 +10,7 @@ const UpdateBlog = () => {
     const queryClient = useQueryClient()
 
     const { data: blog, isLoading } = useQuery({
-        queryKey: ['blogUpdate'],
+        queryKey: ['blogUpdate', id],
         queryFn: async () => await fetch(`http://localhost:5000/blogs/${id}`).then(
             (res) => res.json(),
         ),
