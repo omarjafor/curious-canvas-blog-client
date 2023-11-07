@@ -1,4 +1,6 @@
+import { useQuery } from '@tanstack/react-query';
 import DataTable from 'react-data-table-component';
+import Skeleton from 'react-loading-skeleton';
 
 
 const columns = [
@@ -9,7 +11,11 @@ const columns = [
     },
     {
         name: 'Profile Photo',
-        selector: row => row.profile,
+        selector: row => <div className="avatar">
+            <div className="w-16 rounded-3xl">
+                <img src={row.profile} />
+            </div>
+        </div>,
         sortable: true
     },
     {
@@ -24,78 +30,40 @@ const columns = [
     },
 ];
 
-const data = [
-    {
-        id: 1,
-        profile: 'profile1.jpg',
-        name: 'John Doe',
-        title: 'Software Engineer'
-    },
-    {
-        id: 2,
-        profile: 'profile2.jpg',
-        name: 'Alice Smith',
-        title: 'Graphic Designer'
-    },
-    {
-        id: 3,
-        profile: 'profile3.jpg',
-        name: 'Bob Johnson',
-        title: 'Marketing Manager'
-    },
-    {
-        id: 4,
-        profile: 'profile4.jpg',
-        name: 'Emily Brown',
-        title: 'Data Scientist'
-    },
-    {
-        id: 5,
-        profile: 'profile5.jpg',
-        name: 'David Wilson',
-        title: 'Product Manager'
-    },
-    {
-        id: 6,
-        profile: 'profile6.jpg',
-        name: 'Olivia Lee',
-        title: 'UX Designer'
-    },
-    {
-        id: 7,
-        profile: 'profile7.jpg',
-        name: 'Michael Davis',
-        title: 'Financial Analyst'
-    },
-    {
-        id: 8,
-        profile: 'profile8.jpg',
-        name: 'Sophia Martinez',
-        title: 'Content Writer'
-    },
-    {
-        id: 9,
-        profile: 'profile9.jpg',
-        name: 'William White',
-        title: 'Sales Manager'
-    },
-    {
-        id: 10,
-        profile: 'profile10.jpg',
-        name: 'Ava Harris',
-        title: 'Front-end Developer'
-    }
-]
-
-
 const FeaturedBlogs = () => {
+
+    const { data: featuredBlogs, isLoading } = useQuery({
+        queryKey: ['featured', 'blog'],
+        queryFn: async () => await fetch('http://localhost:5000/featuredblog').then(
+            res => res.json(),
+        ),
+    })
+
+    if (isLoading) return <div className="mx-auto items-center text-center">
+        <Skeleton count={10} />
+        <span className="loading loading-spinner loading-lg text-info"></span>
+        <span className="loading loading-bars loading-lg text-info"></span>
+        <span className="loading loading-dots loading-lg text-info"></span>
+        <Skeleton count={10} />
+    </div>;
+
+    const simplifiedBlogs = featuredBlogs.map((blog, index) => ({
+        id: index + 1,
+        profile: blog.ownerPhoto,
+        name: blog.name,
+        title: blog.blogTitle
+    }))
+    console.log(simplifiedBlogs);
+
     return (
-        <div>
+        <div className='p-12 lg:px-24 lg:py-5'>
             <DataTable
+                title='Top Ten Featured Blogs'
                 columns={columns}
-                data={data}
+                data={simplifiedBlogs}
                 fixedHeader
                 pagination
+                highlightOnHover
             />
         </div>
     );

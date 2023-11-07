@@ -4,6 +4,7 @@ import useAuth from "../../Hooks/useAuth";
 
 const AddBlog = () => {
     const { user } = useAuth();
+    console.log(user);
     
     const handleAddBlog = e => {
         e.preventDefault();
@@ -15,8 +16,10 @@ const AddBlog = () => {
         const photo = e.target.photo.value;
         const timeStamp = Date.now();
         const email = user.email;
+        const name = user.displayName;
+        const ownerPhoto = user.photoURL;
 
-        const blog = { blogTitle, blogCategory, longDescription, shortDescription, rating, photo, timeStamp, email }
+        const blog = { blogTitle, blogCategory, longDescription, shortDescription, rating, photo, timeStamp, email, name, ownerPhoto }
         console.log(blog);
 
         fetch('http://localhost:5000/blogs', {
