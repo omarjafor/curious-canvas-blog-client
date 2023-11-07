@@ -1,19 +1,28 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom"; 
 import Skeleton from "react-loading-skeleton";
-import useWishlist from "../../Hooks/useWishlist";
 import WishlistCard from "./WishlistCard";
 import useAuth from "../../Hooks/useAuth";
 import { Helmet } from "react-helmet-async";
+import useAxios from "../../Hooks/useAxios";
 
 
 const Wishlist = () => {
-    const { user } = useAuth();
-    const { isLoading, wishlistBlog } = useWishlist();
+    const { user, loading } = useAuth();
+    const [ wishlistBlog, setWishlistBlog ] = useState()
     const name = user?.displayName;
     const email = user?.email;
     
+    const axiosSecure = useAxios();
 
-    if (isLoading) return <div className="mx-auto items-center text-center">
+    const url = `/wishlist?email=${user?.email}`;
+
+    useEffect(() => {
+        axiosSecure.get(url)
+            .then(res => setWishlistBlog(res.data))
+    }, [axiosSecure, url])
+
+    if (loading) return <div className="mx-auto items-center text-center">
         <Skeleton count={10} />
         <span className="loading loading-spinner loading-lg text-info"></span>
         <span className="loading loading-bars loading-lg text-info"></span>
@@ -33,6 +42,8 @@ const Wishlist = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-24 pb-12 justify-items-center">
                 {
                     wishlistBlog?.map(blog => <WishlistCard
+                        wishlistBlog={wishlistBlog}
+                        setWishlistBlog={setWishlistBlog}
                     blog={blog}
                     key={blog?._id}
                     ></WishlistCard>)

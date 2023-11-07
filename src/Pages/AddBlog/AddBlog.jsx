@@ -4,7 +4,6 @@ import useAuth from "../../Hooks/useAuth";
 
 const AddBlog = () => {
     const { user } = useAuth();
-    console.log(user);
     
     const handleAddBlog = e => {
         e.preventDefault();

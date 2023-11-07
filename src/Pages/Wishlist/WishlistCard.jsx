@@ -4,12 +4,12 @@ import ReactStars from 'react-stars';
 import useAuth from "../../Hooks/useAuth";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
-const WishlistCard = ({ blog } ) => {
+const WishlistCard = ({ blog, wishlistBlog, setWishlistBlog }) => {
     const queryClient = useQueryClient()
 
     const { user } = useAuth();
 
-    const { _id, blogTitle, blogCategory, shortDescription, photo, rating, blogId } = blog || {} ;
+    const { _id, blogTitle, blogCategory, shortDescription, photo, rating, blogId } = blog || {};
 
     const { mutateAsync } = useMutation({
         mutationFn: async (id) => await fetch(`http://localhost:5000/wishlist/${id}`, {
@@ -21,7 +21,7 @@ const WishlistCard = ({ blog } ) => {
     })
 
     const handleRemove = async id => {
-       await Swal.fire({
+        await Swal.fire({
             title: 'Are you sure?',
             text: "Blog Will Be Deleted From Wishlist",
             icon: 'warning',
@@ -31,13 +31,20 @@ const WishlistCard = ({ blog } ) => {
             confirmButtonText: 'Sure, Delete it'
         }).then((result) => {
             if (result.isConfirmed) {
-                try{
+                try {
                     mutateAsync(id)
-                    Swal.fire(
-                        'Deleted!',
-                        'Your Wishlist Blog has been Deleted',
-                        'success'
-                    ) 
+                        .then(res => res.json())
+                        .then(data => {
+                            if (data.deletedCount > 0) {
+                                Swal.fire(
+                                    'Deleted!',
+                                    'Your Wishlist Blog has been Deleted',
+                                    'success'
+                                )
+                                const remaining = wishlistBlog.filter(blog => blog._id !== id);
+                                setWishlistBlog(remaining);
+                            }
+                        })
                 } catch (err) {
                     console.log(err);
                 }

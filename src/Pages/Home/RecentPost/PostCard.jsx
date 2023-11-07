@@ -6,7 +6,7 @@ import { useMutation } from "@tanstack/react-query";
 
 const PostCard = ({ blog }) => {
     const { user } = useAuth();
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const email = user?.email;
 
     const { _id, blogTitle, blogCategory, longDescription, shortDescription, photo, rating } = blog || {};
@@ -28,7 +28,6 @@ const PostCard = ({ blog }) => {
             return navigate('/login')
         }
         const wishlistBlog = { blogTitle, blogCategory, shortDescription, longDescription, photo, rating, email, blogId }
-        console.log(wishlistBlog);
 
         try{
             await mutateAsync(wishlistBlog)
@@ -37,7 +36,6 @@ const PostCard = ({ blog }) => {
             toast.error('Something went wrong! Try Again😒')
             console.log(err);
         }
-
     }
 
     return (

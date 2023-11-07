@@ -3,9 +3,11 @@ import { Helmet } from "react-helmet-async";
 import toast from "react-hot-toast";
 import Skeleton from "react-loading-skeleton";
 import { useParams } from "react-router-dom";
+import useAxios from "../../Hooks/useAxios";
 
 
 const UpdateBlog = () => {
+    const axiosSecure = useAxios();
     const { id } = useParams();
     const queryClient = useQueryClient()
 
@@ -16,16 +18,10 @@ const UpdateBlog = () => {
         ),
     })
 
-    const { blogTitle, blogCategory, longDescription, shortDescription, rating, photo } = blog || {};
+    const { blogTitle, blogCategory, longDescription, shortDescription, rating, photo, email } = blog || {};
 
     const { mutateAsync } = useMutation({
-        mutationFn: async (updateblog) => await fetch(`http://localhost:5000/blogs/${id}`, {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(updateblog)
-        }),
+        mutationFn: async (updateblog) => await axiosSecure.put(`/blogs/${id}`, updateblog),
         onSuccess: () => {
             queryClient.invalidateQueries(['blogUpdate'])
         },
@@ -50,13 +46,14 @@ const UpdateBlog = () => {
         const photo = e.target.photo.value;
         const timeStamp = Date.now();
 
-        const updateblog = { blogTitle, blogCategory, longDescription, shortDescription, rating, photo, timeStamp }
+        const updateblog = { blogTitle, blogCategory, longDescription, shortDescription, rating, photo, timeStamp, email }
 
         try {
             await mutateAsync(updateblog)
             toast.success('Blog Updated Successful');
         } catch (err) {
             console.log(err);
+            toast.error('You Cannot Update Blog');
         }
     }
 
