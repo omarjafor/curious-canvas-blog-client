@@ -11,7 +11,7 @@ const UpdateBlog = () => {
 
     const { data: blog, isLoading } = useQuery({
         queryKey: ['blogUpdate', id],
-        queryFn: async () => await fetch(`https://blog-website-server-blue.vercel.app/blogs/${id}`).then(
+        queryFn: async () => await fetch(`http://localhost:5000/blogs/${id}`).then(
             (res) => res.json(),
         ),
     })
@@ -19,7 +19,7 @@ const UpdateBlog = () => {
     const { blogTitle, blogCategory, longDescription, shortDescription, rating, photo } = blog || {};
 
     const { mutateAsync } = useMutation({
-        mutationFn: async (updateblog) => await fetch(`https://blog-website-server-blue.vercel.app/blogs/${id}`, {
+        mutationFn: async (updateblog) => await fetch(`http://localhost:5000/blogs/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

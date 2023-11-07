@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ReactStars from 'react-stars';
 import useAuth from "../../../Hooks/useAuth";
 import toast from "react-hot-toast";
@@ -6,13 +6,14 @@ import { useMutation } from "@tanstack/react-query";
 
 const PostCard = ({ blog }) => {
     const { user } = useAuth();
+    const navigate = useNavigate()
     const email = user?.email;
 
     const { _id, blogTitle, blogCategory, longDescription, shortDescription, photo, rating } = blog || {};
     const blogId = _id;
 
     const { mutateAsync } = useMutation({
-        mutationFn: async (wishlistBlog) => await fetch('https://blog-website-server-blue.vercel.app/wishlist', {
+        mutationFn: async (wishlistBlog) => await fetch('http://localhost:5000/wishlist', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -23,6 +24,9 @@ const PostCard = ({ blog }) => {
 
     const handlewishlist = async e => {
         e.preventDefault();
+        if(!user?.email){
+            return navigate('/login')
+        }
         const wishlistBlog = { blogTitle, blogCategory, shortDescription, longDescription, photo, rating, email, blogId }
         console.log(wishlistBlog);
 

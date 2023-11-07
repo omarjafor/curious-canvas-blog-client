@@ -13,7 +13,7 @@ const BlogDetails = () => {
 
     const { data: blog, isLoading } = useQuery({
         queryKey: ['blogDetails', id],
-        queryFn: async () => await fetch(`https://blog-website-server-blue.vercel.app/blogs/${id}`).then(
+        queryFn: async () => await fetch(`http://localhost:5000/blogs/${id}`).then(
             (res) => res.json(),
         ),
     })
@@ -76,7 +76,7 @@ const BlogDetails = () => {
                         {shortDescription}
                     </p>
                     <p className="block text-lg font-normal text-justify leading-8 text-gray-900 dark:text-white antialiased">
-                        {longDescription} Embrace the art of culinary craftsmanship, traverse the globe&apos;s hidden gems, stay informed with the latest news, indulge in the world of entertainment, and so much more. With each visit, you embark on a unique adventure, whether you&apos;re a seasoned explorer or just getting started. Our blogs are your window to the world&apos;s wonders, your source of inspiration, and your opportunity to engage with a vibrant community of like-minded individuals.
+                        {longDescription} Stay informed with the latest news, indulge in the world of entertainment, and so much more. With each visit, you embark on a unique adventure, whether you&apos;re a seasoned explorer or just getting started. Our blogs are your window to the world&apos;s wonders, your source of inspiration, and your opportunity to engage with a vibrant community of like-minded individuals.
                     </p>
                     <div className="flex items-center p-2 w-1/3 my-4 rounded-md bg-green-400 hover:bg-blue-400">
                         <img src="https://i.ibb.co/nLy6sYf/ratings.png" alt="" className="h-8 w-8" />

@@ -12,7 +12,7 @@ const WishlistCard = ({ blog } ) => {
     const { _id, blogTitle, blogCategory, shortDescription, photo, rating, blogId } = blog || {} ;
 
     const { mutateAsync } = useMutation({
-        mutationFn: async (id) => await fetch(`https://blog-website-server-blue.vercel.app/wishlist/${id}`, {
+        mutationFn: async (id) => await fetch(`http://localhost:5000/wishlist/${id}`, {
             method: 'DELETE'
         }),
         onSuccess: () => {
