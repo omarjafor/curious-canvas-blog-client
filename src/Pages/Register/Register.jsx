@@ -59,15 +59,15 @@ const Register = () => {
     return (
         <section className="">
             <Helmet>
-                <title>Abc Service | Register</title>
+                <title>Curious Canvas | Register</title>
             </Helmet>
             <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
                 <section
                     className="relative flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6"
                 >
                     <img
-                        alt="Night"
-                        src="https://images.unsplash.com/photo-1607249895837-d62f1d6f9052?auto=format&fit=crop&q=80&w=1974&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Register"
+                        src="https://i.ibb.co/J7B0f4y/long-form-content-1024x576.png"
                         className="absolute inset-0 h-full w-full object-cover opacity-80"
                     />
 

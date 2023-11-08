@@ -66,8 +66,15 @@ const Login = () => {
         facebookLogin()
             .then(res => {
                 console.log(res.user)
-                toast.success('User Login Successfull', { id: toastId })
-                navigate(location?.state ? location.state : '/');
+                const loggedInUser = res.user;
+                const user = { email: loggedInUser.email }
+                axios.post('http://localhost:5000/jwt', user, { withCredentials: true })
+                    .then(res => {
+                        if (res.data.success) {
+                            toast.success('User Login Successful', { id: toastId });
+                            navigate(location?.state ? location.state : '/');
+                        }
+                    })
             })
             .catch(err => {
                 console.log(err.message);
@@ -80,8 +87,15 @@ const Login = () => {
         twitterLogin()
             .then(res => {
                 console.log(res.user)
-                toast.success('User Login Successfull', { id: toastId })
-                navigate(location?.state ? location.state : '/');
+                const loggedInUser = res.user;
+                const user = { email: loggedInUser.email }
+                axios.post('http://localhost:5000/jwt', user, { withCredentials: true })
+                    .then(res => {
+                        if (res.data.success) {
+                            toast.success('User Login Successful', { id: toastId });
+                            navigate(location?.state ? location.state : '/');
+                        }
+                    })
             })
             .catch(err => {
                 console.log(err.message);
@@ -94,8 +108,15 @@ const Login = () => {
         githubLogin()
             .then(res => {
                 console.log(res.user)
-                toast.success('User Login Successfull', { id: toastId })
-                navigate(location?.state ? location.state : '/');
+                const loggedInUser = res.user;
+                const user = { email: loggedInUser.email }
+                axios.post('http://localhost:5000/jwt', user, { withCredentials: true })
+                    .then(res => {
+                        if (res.data.success) {
+                            toast.success('User Login Successful', { id: toastId });
+                            navigate(location?.state ? location.state : '/');
+                        }
+                    })
             })
             .catch(err => {
                 console.log(err.message);
@@ -106,10 +127,11 @@ const Login = () => {
     return (
         <section className="relative flex flex-wrap lg:h-screen lg:items-center">
             <Helmet>
-                <title>Abc Service | Login</title>
+                <title>Curious Canvas | Login</title>
             </Helmet>
             <div className="w-full px-4 py-12 sm:px-6 sm:py-16 lg:w-1/2 lg:px-8 lg:py-24">
                 <div className="mx-auto max-w-lg text-center">
+                    <h1 className="text-4xl lg:text-5xl font-bold mb-2 text-cyan-600 dark:text-white">Curious Canvas Blog!</h1>
                     <h1 className="text-2xl font-bold sm:text-3xl dark:text-white">Get Started Today!</h1>
                 </div>
 
@@ -229,8 +251,8 @@ const Login = () => {
 
             <div className="relative h-64 w-full sm:h-96 lg:h-full lg:w-1/2">
                 <img
-                    alt="Welcome"
-                    src="https://images.unsplash.com/photo-1603912699214-92627f304eb6?auto=format&fit=crop&q=80&w=1925&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="Login"
+                    src="https://i.ibb.co/dGmjrZW/Login.jpg"
                     className="absolute inset-0 h-full w-full object-cover"
                 />
             </div>

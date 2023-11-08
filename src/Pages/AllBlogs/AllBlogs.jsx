@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import BlogCard from "./BlogCard";
 import { BsSearch } from "react-icons/bs";
+import { Helmet } from "react-helmet-async";
 
 
 const AllBlogs = () => {
@@ -22,6 +23,9 @@ const AllBlogs = () => {
     
     return (
         <div className="">
+            <Helmet>
+                <title>Curious Canvas | All Blogs</title>
+            </Helmet>
             <div className="flex flex-col w-full items-center pt-4 gap-4 bg-gradient-to-b from-blue-600 via-blue-300 to-blue-100">
                 <p className="text-4xl md:text-6xl font-extrabold text-white">Search By Blog Title</p>
                 <form action="" className="max-w-[480px] w-full px-4">

@@ -1,10 +1,14 @@
 import { Link } from "react-router-dom";
 import page from '../../../public/error-page.jpg';
+import { Helmet } from "react-helmet-async";
 
 
 const ErrorPage = () => {
     return (
         <div>
+            <Helmet>
+                <title>Curious Canvas | Error Found</title>
+            </Helmet>
             <link rel="stylesheet" href="https://cdn.materialdesignicons.com/6.5.95/css/materialdesignicons.min.css" />
 
             <div className="flex items-center justify-center min-h-screen">

@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import DataTable from 'react-data-table-component';
+import { Helmet } from 'react-helmet-async';
 import Skeleton from 'react-loading-skeleton';
 
 
@@ -57,6 +58,9 @@ const FeaturedBlogs = () => {
 
     return (
         <div className='p-12 lg:px-24 lg:py-5'>
+            <Helmet>
+                <title>Curious Canvas | Featured Blogs</title>
+            </Helmet>
             <DataTable
                 title='Top Ten Featured Blogs'
                 columns={columns}

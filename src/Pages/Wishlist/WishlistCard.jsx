@@ -69,7 +69,7 @@ const WishlistCard = ({ blog, wishlistBlog, setWishlistBlog }) => {
                     <p className="text-gray-700 leading-tight mb-4">
                         {shortDescription}
                     </p>
-                    <div className="flex justify-between items-center">
+                    <div className="flex lg:flex-row flex-col gap-3 justify-between items-center">
                         <div className="flex items-center">
                             <img src={user?.photoURL} alt="Avatar" className="w-8 h-8 rounded-full mr-2 object-cover" />
                             <span className="text-gray-800 font-semibold"> {user?.displayName} </span>

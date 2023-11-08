@@ -54,21 +54,21 @@ const BlogDetails = () => {
                             <img src="https://i.ibb.co/p3g8n8W/category.png" alt="" className="h-8 w-8" />
                             <div className="ml-4">
                                 <h4 className="font-bold text-[#878787] text-base">Blog Category</h4>
-                                <h2 className="font-bold text-lg uppercase"> {blogCategory} </h2>
+                                <h2 className="font-bold text-sm lg:text-lg uppercase"> {blogCategory} </h2>
                             </div>
                         </div>
                         <div className="flex items-center p-4 mr-2 w-1/3 rounded-md bg-gray-200">
                             <img src="https://i.ibb.co/TYZ7pLK/quality.png" alt="" className="h-8 w-8" />
                             <div className="ml-4">
                                 <h4 className="font-bold text-[#878787] text-base"> Blog Quality</h4>
-                                <h2 className="font-bold text-lg uppercase">  Original and Unique </h2>
+                                <h2 className="font-bold text-sm lg:text-lg uppercase">  Original and Unique </h2>
                             </div>
                         </div>
                         <div className="flex items-center p-4 w-1/3 rounded-md bg-gray-200">
                             <img src="https://i.ibb.co/qN4Lkrc/type.png" alt="" className="h-8 w-8" />
                             <div className="ml-4">
                                 <h4 className="font-bold text-[#878787] text-base">Blog Type</h4>
-                                <h2 className="font-bold text-lg uppercase"> {blogCategory} </h2>
+                                <h2 className="font-bold text-sm lg:text-lg uppercase"> {blogCategory} </h2>
                             </div>
                         </div>
                     </div>
@@ -78,7 +78,7 @@ const BlogDetails = () => {
                     <p className="block text-lg font-normal text-justify leading-8 text-gray-900 dark:text-white antialiased">
                         {longDescription} Stay informed with the latest news, indulge in the world of entertainment, and so much more. With each visit, you embark on a unique adventure, whether you&apos;re a seasoned explorer or just getting started. Our blogs are your window to the world&apos;s wonders, your source of inspiration, and your opportunity to engage with a vibrant community of like-minded individuals.
                     </p>
-                    <div className="flex items-center p-2 w-1/3 my-4 rounded-md bg-green-400 hover:bg-blue-400">
+                    <div className="flex items-center p-2 w-2/4 lg:w-1/3 my-4 rounded-md bg-green-400 hover:bg-blue-400">
                         <img src="https://i.ibb.co/nLy6sYf/ratings.png" alt="" className="h-8 w-8" />
                         <div className="ml-3">
                             <h4 className="font-bold text-black hover:text-white text-base">Blog Ratings</h4>

@@ -39,7 +39,7 @@ const Wishlist = () => {
                 <h1 className='text-4xl font-bold drop-shadow-[-1px_3px_1px_rgba(17,131,6,0.6)] bg-gradient-to-br from-rose-400 via-fuchsia-500 to-indigo-500 bg-clip-text text-transparent'>Dear {name} Wishlist</h1>
                 <p className='max-w-3xl mx-auto my-4 text-base text-indigo-600'> {email} </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-24 pb-12 justify-items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-12 lg:mx-24 pb-12 justify-items-center">
                 {
                     wishlistBlog?.map(blog => <WishlistCard
                         wishlistBlog={wishlistBlog}

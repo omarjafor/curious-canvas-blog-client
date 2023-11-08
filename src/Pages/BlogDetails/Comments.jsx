@@ -71,7 +71,7 @@ const Comments = ({ id, email }) => {
             </div>
             <div className="flex justify-center items-center mt-6 lg:mt-0">
                 <form action="" onSubmit={handleComments}>
-                    <div className="h-60 px-7 w-[700px] rounded-[12px] bg-white p-4 shadow-md border">
+                    <div className="h-60 px-7 max-w-[700px] rounded-[12px] bg-white p-4 shadow-md border">
                         {
                             user.email == email ? 
                             <div className="align-middle">
@@ -86,9 +86,9 @@ const Comments = ({ id, email }) => {
                                 </p>
                                 <textarea className="h-20 px-3 text-base py-1 mt-5 outline-none border-gray-300 w-full resize-none border rounded-lg placeholder:text-sm" placeholder="Add your comments here" name="comment"></textarea>
 
-                                <div className="flex justify-between mt-2">
+                                <div className="flex justify-between gap-10 mt-2">
                                     <p className="text-base text-blue-900 ">Enter atleast 20 characters</p>
-                                    <button className="h-12 w-[150px] bg-blue-400 text-base text-black font-semibold rounded-lg transition-all cursor-pointer hover:bg-blue-600">
+                                    <button className="h-12 ml-8 w-[150px] bg-blue-400 text-base text-black font-semibold rounded-lg transition-all cursor-pointer hover:bg-blue-600">
                                         Submit comment
                                     </button>
                                 </div>
