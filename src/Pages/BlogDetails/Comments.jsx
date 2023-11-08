@@ -76,7 +76,7 @@ const Comments = ({ id, email }) => {
                             user.email == email ? 
                             <div className="align-middle">
                                 <p className="text-2xl text-center font-bold text-blue-900 transition-all hover:text-black">
-                                    You can not comment on own your blog
+                                    You cannot comment on your own blog
                                 </p>
                             </div> 
                             : 

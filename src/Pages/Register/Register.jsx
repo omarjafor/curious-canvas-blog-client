@@ -88,11 +88,11 @@ const Register = () => {
                         </a>
 
                         <h2 className="mt-6 text-2xl font-bold text-white sm:text-3xl md:text-4xl">
-                            Welcome to Curious Canvas 🦑
+                            Welcome to Curious Canvas Blog 🦑
                         </h2>
 
                         <p className="mt-4 leading-relaxed text-white/90">
-                            Embark on a voyage of discovery with The Explorer Blog. Explore the worlds wonders and share your adventures!
+                            Explore on a voyage of discovery with The Explorer Blog. Explore the worlds wonders and share your adventures!
                         </p>
                     </div>
                 </section>
@@ -102,9 +102,9 @@ const Register = () => {
                 >
                     <div className="max-w-xl lg:max-w-3xl">
                         <div className="relative -mt-16 block lg:hidden">
-                            <a
+                            <Link
                                 className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-white text-blue-600 sm:h-20 sm:w-20"
-                                href="/"
+                                to='/'
                             >
                                 <span className="sr-only">Home</span>
                                 <svg
@@ -118,12 +118,12 @@ const Register = () => {
                                         fill="currentColor"
                                     />
                                 </svg>
-                            </a>
+                            </Link>
 
                             <h1
                                 className="mt-2 mb-8 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl dark:text-white"
                             >
-                                Welcome to Curious Canvas 🦑
+                                Welcome to Curious Canvas Blog🦑
                             </h1>
 
 
@@ -146,6 +146,7 @@ const Register = () => {
                                     type="text"
                                     id="FirstName"
                                     name="name"
+                                    required
                                     className="mt-1 py-2 px-3 w-full rounded-md border border-solid border-blue-400 bg-white text-sm text-gray-700 shadow-sm"
                                 />
                             </div>
@@ -159,6 +160,7 @@ const Register = () => {
                                     type="email"
                                     id="Email"
                                     name="email"
+                                    required
                                     className="mt-1 py-2 px-3 w-full rounded-md border border-solid border-blue-400 bg-white text-sm text-gray-700 shadow-sm"
                                 />
                             </div>
@@ -172,6 +174,7 @@ const Register = () => {
                                     type="text"
                                     id="image"
                                     name="image"
+                                    required
                                     className="mt-1 py-2 px-3 w-full rounded-md border border-solid border-blue-400 bg-white text-sm text-gray-700 shadow-sm"
                                 />
                             </div>

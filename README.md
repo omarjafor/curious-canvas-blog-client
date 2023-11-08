@@ -1,4 +1,4 @@
-# # React Blog Website Full Stack Application
+# # React Full Stack Blog Website Application
 
 ## [ Live Link](https://blog-website-omarjafor.web.app/)
 
@@ -23,6 +23,7 @@
 ### &#9755; 5. Profile Page:
 ##### &bull; Registered users can view their profile details.
 ### &#9755; 6. User Authentication and Authorization:
+##### &bull; Json Web token system implemented.
 ##### &bull; Secure user authentication and authorization system implemented.
 ### &#9755; 7. Responsive Design:
 ##### &bull; The website is designed to work seamlessly on various devices and screen sizes.
@@ -33,3 +34,4 @@
 ##### &bull; User can see the blog ratings in the blog page and products details page.
 ### &#9755; 10. Contact and Support:
 ##### &bull; Contact information is available in the footer for user inquiries.
+##### &bull; Many more feature are given to this blog website please explore.

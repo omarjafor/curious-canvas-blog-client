@@ -50,7 +50,13 @@ const UpdateBlog = () => {
 
         try {
             await mutateAsync(updateblog)
-            toast.success('Blog Updated Successful');
+                .then(res => {
+                    if (res.data.modifiedCount > 0) {
+                        toast.success('Blog Updated Successful');
+                    }else{
+                        toast.error('You Cannot Update Blog');
+                    }
+                })
         } catch (err) {
             console.log(err);
             toast.error('You Cannot Update Blog');
