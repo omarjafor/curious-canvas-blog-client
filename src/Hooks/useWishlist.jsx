@@ -7,7 +7,7 @@ const useWishlist = () => {
     
     const { data: wishlistBlog, isLoading } = useQuery({
         queryKey: ['wishlist', user.email],
-        queryFn: async () => await fetch(`https://blog-website-server-blue.vercel.app/wishlist?email=${user?.email}`).then(
+        queryFn: async () => await fetch(` http://localhost:5000/wishlist?email=${user?.email}`).then(
             (res) => res.json(),
         ),
     })

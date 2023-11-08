@@ -1,11 +1,22 @@
 import { Helmet } from "react-helmet-async";
 import toast from "react-hot-toast";
 import useAuth from "../../Hooks/useAuth";
+import useAxios from "../../Hooks/useAxios";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 const AddBlog = () => {
     const { user } = useAuth();
+    const axiosSecure = useAxios();
+    const queryClient = useQueryClient()
+
+    const { mutateAsync } = useMutation({
+        mutationFn: async (blog) => await axiosSecure.post('/blogs', blog),
+        onSuccess: () => {
+            queryClient.invalidateQueries(['blogData'])
+        },
+    })
     
-    const handleAddBlog = e => {
+    const handleAddBlog = async e => {
         e.preventDefault();
         const blogTitle = e.target.name.value;
         const blogCategory = e.target.category.value;
@@ -19,21 +30,18 @@ const AddBlog = () => {
         const ownerPhoto = user.photoURL;
 
         const blog = { blogTitle, blogCategory, longDescription, shortDescription, rating, photo, timeStamp, email, name, ownerPhoto }
-        console.log(blog);
-
-        fetch('https://blog-website-server-blue.vercel.app/blogs', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(blog)
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                toast.success('Blog Added Successful');
-                e.target.reset();
-            })
+            
+        try{
+            await mutateAsync(blog)
+                .then(res => {
+                    console.log(res.data)
+                    toast.success('Blog Added Successful');
+                    e.target.reset();
+                })
+        } catch (err) {
+            console.log(err);
+            toast.error('You cannot add blog');
+        }
     }
 
     return (

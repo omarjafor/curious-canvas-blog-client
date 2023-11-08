@@ -3,27 +3,23 @@ import CommentCard from "./CommentCard";
 import useAuth from "../../Hooks/useAuth";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import Skeleton from "react-loading-skeleton";
+import useAxios from "../../Hooks/useAxios";
 
 
 const Comments = ({ id, email }) => {
-    const { user } = useAuth()
+    const { user } = useAuth();
+    const axiosSecure = useAxios();
     const queryClient = useQueryClient();
 
     const { data: comments, isLoading } = useQuery({
         queryKey: ['blogComment', id],
-        queryFn: async () => await fetch(`https://blog-website-server-blue.vercel.app/comments/${id}`).then(
+        queryFn: async () => await fetch(` http://localhost:5000/comments/${id}`).then(
             (res) => res.json(),
         ),
     })
 
     const { mutateAsync } = useMutation({
-        mutationFn: async (fullComment) => await fetch('https://blog-website-server-blue.vercel.app/comments', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(fullComment)
-        }),
+        mutationFn: async (fullComment) => await axiosSecure.post('/comments', fullComment),
         onSuccess: () => {
             queryClient.invalidateQueries(['blogComment'])
         },
@@ -53,8 +49,12 @@ const Comments = ({ id, email }) => {
         }
             try{
                 await mutateAsync(fullComment)
-                toast.success('Comment Added Successful');
-                e.target.reset();
+                .then(res => {
+                    console.log(res.data);
+                    toast.success('Comment Added Successful');
+                    e.target.reset();
+                })
+                
             } catch (err) {
                 console.log(err);
             }
