@@ -24,7 +24,7 @@ const AllBlogs = () => {
     }, [])
 
     useEffect( () => {
-        fetch(' http://localhost:5000/allblogs')
+        fetch('   https://blog-website-server-blue.vercel.app/allblogs')
         .then(res => res.json())
         .then(data => setShowBlog(data))
     } , [])

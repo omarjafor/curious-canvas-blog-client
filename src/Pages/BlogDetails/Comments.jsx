@@ -13,7 +13,7 @@ const Comments = ({ id, email }) => {
 
     const { data: comments, isLoading } = useQuery({
         queryKey: ['blogComment', id],
-        queryFn: async () => await fetch(` http://localhost:5000/comments/${id}`).then(
+        queryFn: async () => await fetch(`   https://blog-website-server-blue.vercel.app/comments/${id}`).then(
             (res) => res.json(),
         ),
     })

@@ -30,7 +30,7 @@ const BlogCard = ({ blog }) => {
     }, [])
 
     const { mutateAsync } = useMutation({
-        mutationFn: async (wishlistBlog) => await fetch(' http://localhost:5000/wishlist', {
+        mutationFn: async (wishlistBlog) => await fetch('   https://blog-website-server-blue.vercel.app/wishlist', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

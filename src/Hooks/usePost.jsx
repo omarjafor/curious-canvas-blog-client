@@ -4,7 +4,7 @@ const usePost = () => {
 
     const { isPending, data } = useQuery({
         queryKey: ['blogData'],
-        queryFn: () => fetch(' http://localhost:5000/blogs').then(
+        queryFn: () => fetch('   https://blog-website-server-blue.vercel.app/blogs').then(
             (res) => res.json(),
         ),
     })
