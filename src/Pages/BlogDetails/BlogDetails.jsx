@@ -90,7 +90,7 @@ const BlogDetails = () => {
                         </div>
                     </div>
                     {
-                        user.email == email && <Link to={`/updateblog/${_id}`}
+                        user?.email == email && <Link to={`/updateblog/${_id}`}
                             className="px-5 py-2 my-3 rounded-lg font-bold btn btn-wide bg-gradient-to-br from-rose-400 via-fuchsia-500 to-indigo-500 hover:bg-green-500 text-white hover:text-black">
                             Update Blog
                         </Link>

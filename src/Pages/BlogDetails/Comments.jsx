@@ -37,7 +37,7 @@ const Comments = ({ id, email }) => {
         <Skeleton count={5} />
     </div>;
 
-    console.log(comments, isLoading);
+    // console.log(comments, isLoading);
 
     const handleComments = async e => {
         e.preventDefault();

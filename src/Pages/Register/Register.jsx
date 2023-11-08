@@ -1,13 +1,11 @@
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
-import { useState } from "react";
 import toast from "react-hot-toast";
 import { Helmet } from "react-helmet-async";
 
 
 const Register = () => {
     const { createUser, profileUpdate, logOut } = useAuth();
-    const [error, setError] = useState('');
     const navigate = useNavigate();
 
     const handleSignUp = e => {
@@ -18,22 +16,23 @@ const Register = () => {
         const image = form.image.value;
         const password = form.password.value;
         const passwordConfirm = form.passwordConfirm.value;
-        console.log(name, email, image, password, passwordConfirm);
 
-        if (password.length < 6 || passwordConfirm.length < 6) {
-            setError('Password is less than 6 characters');
+        if (password !== passwordConfirm) {
+            toast.error('Password does not matched');
             return;
-        } else if (password !== passwordConfirm) {
-            setError('Password does not matched');
+        } else if (password.length < 6 || passwordConfirm.length < 6) {
+            toast.error('Password is less than 6 characters');
+            return;
+        } else if (!/[0-9]/.test(password || passwordConfirm)) {
+            toast.error('Password dont have a numeric character');
             return;
         } else if (!/[A-Z]/.test(password || passwordConfirm)) {
-            setError('Password does not have a capital letter');
+            toast.error('Password does not have a capital letter');
             return;
         } else if (!/[!@#$%^&*]/.test(password || passwordConfirm)) {
-            setError('Password does not have a special character');
+            toast.error('Password does not have a special character');
             return;
         }
-        setError('');
 
         const toastId = toast.loading('User Registration in....')
         createUser(email, password)
@@ -55,7 +54,6 @@ const Register = () => {
             .catch(err => {
                 console.error(err)
                 toast.error('User Registration Failed', { id: toastId })
-                setError(err.message)
             })
     }
     return (
@@ -251,9 +249,6 @@ const Register = () => {
                                 </p>
                             </div>
                         </form>
-                        {
-                            error && <p className="text-red-600 mt-3"> {error} </p>
-                        }
                     </div>
                 </main>
             </div>

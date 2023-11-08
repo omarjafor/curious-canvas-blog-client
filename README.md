@@ -1,6 +1,6 @@
-# # React Blog Website Application
+# # React Blog Website Full Stack Application
 
-## [ Live Link]()
+## [ Live Link](https://blog-website-omarjafor.web.app/)
 
 ### &rarr; Curious Canvas Blog Website Features ?
 
@@ -10,19 +10,16 @@
 ### &#9755; 2. Home Page:
 ##### &bull; Navigation bar for easy access to different sections.
 ##### &bull; Attractive visuals and messages to engage visitors.
-##### &bull; 
-##### &bull; 
-##### &bull; 
+##### &bull; Newsletter section for subscribe users email and notify.
 ##### &bull; User friendly dark theme and light theme toggle implemented.
 ##### &bull; Footer with contact details for inquiries.
 ### &#9755; 3. Details Blog Post:
-##### &bull; 
 ##### &bull; Allows users to view detailed information about a specific blog.
 ##### &bull; Provides a feature to edit and update blog information.
-##### &bull; 
-##### &bull; 
+##### &bull; User can update his/her own blog and not others.
+##### &bull; User can comment on others blog not own blog.
 ### &#9755; 4. Recent Blog Post:
-##### &bull; 
+##### &bull; User can see latest updated or added blog.
 ### &#9755; 5. Profile Page:
 ##### &bull; Registered users can view their profile details.
 ### &#9755; 6. User Authentication and Authorization:
