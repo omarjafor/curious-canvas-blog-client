@@ -1,3 +1,5 @@
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { useState, useEffect } from "react";
 import BlogCard from "./BlogCard";
 import { BsSearch } from "react-icons/bs";
@@ -8,6 +10,18 @@ const AllBlogs = () => {
     const [showBlog, setShowBlog] = useState([]);
     const [category, setCategory] = useState('');
     const [searchTitle, setSearchTitle] = useState('');
+
+    useEffect(() => {
+
+        AOS.refresh();
+
+        AOS.init({
+            offset: 120,
+            duration: 3000,
+        });
+
+
+    }, [])
 
     useEffect( () => {
         fetch('http://localhost:5000/allblogs')
@@ -26,7 +40,7 @@ const AllBlogs = () => {
             <Helmet>
                 <title>Curious Canvas | All Blogs</title>
             </Helmet>
-            <div className="flex flex-col w-full items-center pt-4 gap-4 bg-gradient-to-b from-blue-600 via-blue-300 to-blue-100">
+            <div className="flex flex-col w-full items-center pt-4 gap-4 bg-gradient-to-b from-blue-600 via-blue-300 to-blue-100" data-aos="zoom-in-up">
                 <p className="text-4xl md:text-6xl font-extrabold text-white">Search By Blog Title</p>
                 <form action="" className="max-w-[480px] w-full px-4">
                     <div className="relative mb-3">
@@ -37,7 +51,7 @@ const AllBlogs = () => {
                     </div>
                 </form>
             </div>
-            <div className="flex justify-end my-3">
+            <div className="flex justify-end my-3" data-aos="zoom-in-up">
                 <div className="form-control md:w-1/3 ml-4">
                     <label className="label">
                         <span className="font-bold text-lg text-purple-600">Blog Category</span>
@@ -57,7 +71,7 @@ const AllBlogs = () => {
                     </select>
                 </div>
             </div>
-            <div className="grid grid-cols-1 xl:grid-cols-3 gap-y-10 gap-x-6 items-start p-8">
+            <div className="grid grid-cols-1 xl:grid-cols-3 gap-y-10 gap-x-6 items-start p-8" data-aos="zoom-in-up">
                 {
                     filteredData?.map(blog => <BlogCard
                     blog={blog}

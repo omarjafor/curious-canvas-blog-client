@@ -1,8 +1,22 @@
-import { useState } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Card from './Card';
 
 const FramerMotion = () => {
+
+    useEffect(() => {
+
+        AOS.refresh();
+
+        AOS.init({
+            offset: 120,
+            duration: 3000,
+        });
+
+
+    }, [])
 
     const [selectedId, setSelectedId] = useState('');
     const items = [
@@ -70,35 +84,40 @@ const FramerMotion = () => {
     ];
 
     return (
-        <motion.div className="flex items-center justify-center lg:mx-24">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-8 mx-5">
-                {items.map((item) => (
-                    <Card
-                    key={item.id}
-                    item={item}
-                    selectedId={selectedId}
-                    setSelectedId={setSelectedId}
-                    ></Card>
-                ))}
-                
+        <div className='my-10 lg:mx-24'>
+            <div className="mx-14" data-aos="zoom-in-up">
+                <h2 className="text-2xl text-indigo-500 font-semibold italic mb-3"> Our Trending Blogs</h2>
+                <h2 className="text-4xl font-bold drop-shadow-[-1px_3px_1px_rgba(17,131,6,0.6)] bg-gradient-to-br from-rose-400 via-fuchsia-500 to-indigo-500 bg-clip-text text-transparent">Best Explorer Blogs</h2>
             </div>
+            <motion.div className="flex items-center justify-center">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-8 mx-5">
+                    {items.map((item) => (
+                        <Card 
+                            key={item.id}
+                            item={item}
+                            selectedId={selectedId}
+                            setSelectedId={setSelectedId}
+                        ></Card>
+                    ))}
 
-            <AnimatePresence>
-                {selectedId && (
-                    <motion.div
-                        className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                    >
-                        {items.map((item) => ( item.id === selectedId && (
-                            <motion.div className="bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 rounded-lg p-4 shadow-md max-w-lg mx-auto"
+                </div>
+
+                <AnimatePresence>
+                    {selectedId && (
+                        <motion.div data-aos="zoom-in-up"
+                            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                        >
+                            {items.map((item) => (item.id === selectedId && (
+                                <motion.div data-aos="zoom-in-up" className="bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 rounded-lg p-4 shadow-md max-w-lg mx-auto"
                                     layoutId={`card-container-${item.id}`}
                                     key={item.id}
                                     initial={{ scale: 0.8, opacity: 0 }}
                                     animate={{ scale: 1, opacity: 1 }}
-                                exit={{ scale: 0.8, opacity: 0, transition: { duration: 0.15 } }}>
-                                    <motion.div className="relative">
+                                    exit={{ scale: 0.8, opacity: 0, transition: { duration: 0.15 } }}>
+                                    <motion.div className="relative" data-aos="zoom-in-up">
                                         <motion.img className="w-full"
                                             src={item.image}
                                             alt="Sunset in the mountains" />
@@ -114,23 +133,23 @@ const FramerMotion = () => {
                                         </motion.button>
 
                                     </motion.div>
-                                <div className="px-6 py-4 mb-auto bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500">
+                                    <div className="px-6 py-4 mb-auto bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500">
                                         <motion.h2
                                             className="font-bold text-xl inline-block text-black hover:text-indigo-600 transition duration-500 ease-in-out mb-2"> {item.title} </motion.h2>
                                         <motion.p
-                                        className="text-md text-white"
+                                            className="text-md text-white"
                                             initial={{ opacity: 0 }}
                                             animate={{ opacity: 1 }}
                                             exit={{ opacity: 0 }}
                                         >
 
-                                        <p className='text-lg my-3 font-medium'> {item.category} </p>
+                                            <p className='text-lg my-3 font-medium'> {item.category} </p>
 
-                                        <p className='text-base text-white my-3 font-medium'> {item.shortDes} </p>
+                                            <p className='text-base text-white my-3 font-medium'> {item.shortDes} </p>
                                             {item.longDes}
                                         </motion.p>
                                     </div>
-                                <div className="px-6 py-3 lg:py-0 flex flex-row items-center justify-between bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500">
+                                    <div className="px-6 py-3 lg:py-0 flex flex-row items-center justify-between bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500">
                                         <span href="#" className="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center">
 
                                             <motion.span className="ml-1"> {item.time} </motion.span>
@@ -142,12 +161,13 @@ const FramerMotion = () => {
                                         </span>
                                     </div>
                                 </motion.div>
-                        )
-                        ))}
-                    </motion.div>
-                )}
-            </AnimatePresence>
-        </motion.div>
+                            )
+                            ))}
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+            </motion.div>
+        </div>
     );
 };
 

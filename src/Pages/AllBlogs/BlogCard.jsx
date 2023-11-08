@@ -5,6 +5,9 @@ import Skeleton from "react-loading-skeleton";
 import { useMutation } from "@tanstack/react-query";
 import 'react-photo-view/dist/react-photo-view.css';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 const BlogCard = ({ blog }) => {
     const { user, loading } = useAuth();
@@ -13,6 +16,18 @@ const BlogCard = ({ blog }) => {
 
     const { _id, blogTitle, blogCategory, longDescription, shortDescription, photo, rating } = blog || {};
     const blogId = _id;
+
+    useEffect(() => {
+
+        AOS.refresh();
+
+        AOS.init({
+            offset: 120,
+            duration: 3000,
+        });
+
+
+    }, [])
 
     const { mutateAsync } = useMutation({
         mutationFn: async (wishlistBlog) => await fetch('http://localhost:5000/wishlist', {
@@ -50,7 +65,7 @@ const BlogCard = ({ blog }) => {
 
     return (
         <PhotoProvider>
-            <div>
+            <div data-aos="zoom-in-up">
                 <div className="relative flex flex-col sm:flex-row xl:flex-col items-start">
                     <div className="order-1 sm:ml-6 xl:ml-0 w-full">
                         <h3 className="mb-1 text-slate-900 font-semibold dark:text-slate-200">
