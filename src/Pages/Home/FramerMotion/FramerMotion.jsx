@@ -87,7 +87,7 @@ const FramerMotion = () => {
         <div className='my-10 lg:mx-24'>
             <div className="mx-14" data-aos="zoom-in-up">
                 <h2 className="text-2xl text-indigo-500 font-semibold italic mb-3"> Our Trending Blogs</h2>
-                <h2 className="text-4xl font-bold drop-shadow-[-1px_3px_1px_rgba(17,131,6,0.6)] bg-gradient-to-br from-rose-400 via-fuchsia-500 to-indigo-500 bg-clip-text text-transparent">Best Explorer Blogs</h2>
+                <h2 className="text-4xl leading-[50px] font-bold drop-shadow-[-1px_3px_1px_rgba(17,131,6,0.6)] bg-gradient-to-br from-rose-400 via-fuchsia-500 to-indigo-500 bg-clip-text text-transparent">Best Explorer Blogs</h2>
             </div>
             <motion.div className="flex items-center justify-center">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-8 mx-5">
@@ -105,7 +105,7 @@ const FramerMotion = () => {
                 <AnimatePresence>
                     {selectedId && (
                         <motion.div data-aos="zoom-in-up"
-                            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
+                            className="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
@@ -136,7 +136,7 @@ const FramerMotion = () => {
                                     <div className="px-6 py-4 mb-auto bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500">
                                         <motion.h2
                                             className="font-bold text-xl inline-block text-black hover:text-indigo-600 transition duration-500 ease-in-out mb-2"> {item.title} </motion.h2>
-                                        <motion.p
+                                        <motion.div
                                             className="text-md text-white"
                                             initial={{ opacity: 0 }}
                                             animate={{ opacity: 1 }}
@@ -147,7 +147,7 @@ const FramerMotion = () => {
 
                                             <p className='text-base text-white my-3 font-medium'> {item.shortDes} </p>
                                             {item.longDes}
-                                        </motion.p>
+                                        </motion.div>
                                     </div>
                                     <div className="px-6 py-3 lg:py-0 flex flex-row items-center justify-between bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500">
                                         <span href="#" className="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center">

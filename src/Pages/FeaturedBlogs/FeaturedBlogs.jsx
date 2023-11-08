@@ -35,7 +35,7 @@ const FeaturedBlogs = () => {
 
     const { data: featuredBlogs, isLoading } = useQuery({
         queryKey: ['featured', 'blog'],
-        queryFn: async () => await fetch('http://localhost:5000/featuredblog').then(
+        queryFn: async () => await fetch('https://blog-website-server-blue.vercel.app/featuredblog').then(
             res => res.json(),
         ),
     })
@@ -54,7 +54,6 @@ const FeaturedBlogs = () => {
         name: blog.name,
         title: blog.blogTitle
     }))
-    console.log(simplifiedBlogs);
 
     return (
         <div className='p-12 lg:px-24 lg:py-5'>

@@ -24,7 +24,7 @@ const Login = () => {
                 const loggedInUser = res.user;
                 const user = { email: loggedInUser.email }
 
-                axios.post('http://localhost:5000/jwt', user, { withCredentials: true })
+                axios.post('https://blog-website-server-blue.vercel.app/jwt', user, { withCredentials: true })
                     .then(res => {
                         if (res.data.success) {
                             toast.success('User Login Successful', { id: toastId });
@@ -47,7 +47,7 @@ const Login = () => {
                 console.log(res.user)
                 const loggedInUser = res.user;
                 const user = { email: loggedInUser.email }
-                axios.post('http://localhost:5000/jwt', user, { withCredentials: true })
+                axios.post('https://blog-website-server-blue.vercel.app/jwt', user, { withCredentials: true })
                     .then(res => {
                         if (res.data.success) {
                             toast.success('User Login Successful', { id: toastId });
@@ -68,7 +68,7 @@ const Login = () => {
                 console.log(res.user)
                 const loggedInUser = res.user;
                 const user = { email: loggedInUser.email }
-                axios.post('http://localhost:5000/jwt', user, { withCredentials: true })
+                axios.post('https://blog-website-server-blue.vercel.app/jwt', user, { withCredentials: true })
                     .then(res => {
                         if (res.data.success) {
                             toast.success('User Login Successful', { id: toastId });
@@ -89,7 +89,7 @@ const Login = () => {
                 console.log(res.user)
                 const loggedInUser = res.user;
                 const user = { email: loggedInUser.email }
-                axios.post('http://localhost:5000/jwt', user, { withCredentials: true })
+                axios.post('https://blog-website-server-blue.vercel.app/jwt', user, { withCredentials: true })
                     .then(res => {
                         if (res.data.success) {
                             toast.success('User Login Successful', { id: toastId });
@@ -110,7 +110,7 @@ const Login = () => {
                 console.log(res.user)
                 const loggedInUser = res.user;
                 const user = { email: loggedInUser.email }
-                axios.post('http://localhost:5000/jwt', user, { withCredentials: true })
+                axios.post('https://blog-website-server-blue.vercel.app/jwt', user, { withCredentials: true })
                     .then(res => {
                         if (res.data.success) {
                             toast.success('User Login Successful', { id: toastId });

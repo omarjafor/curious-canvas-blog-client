@@ -19,7 +19,7 @@ const Card = ({ item, selectedId, setSelectedId }) => {
     }, [])
 
     return (
-        <motion.div data-aos="zoom-in-up" className={`card relative rounded overflow-hidden shadow-lg flex flex-col transform transition-transform duration-500 hover:scale-105 ${selectedId === item.id ? 'card-selected' : ''
+        <motion.div data-aos="zoom-in-up" className={`card bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 relative rounded overflow-hidden shadow-lg flex flex-col transform transition-transform duration-500 hover:scale-105 ${selectedId === item.id ? 'card-selected' : ''
             }`}
             layoutId={`card-container-${item.id}`}
             onClick={() => setSelectedId(item.id)}

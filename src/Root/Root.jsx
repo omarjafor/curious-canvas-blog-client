@@ -9,7 +9,7 @@ const Root = () => {
         <div>
             <ScrollToTop></ScrollToTop>
             <Navbar></Navbar>
-            <Outlet></Outlet>
+            <Outlet className="overflow-x-hidden"></Outlet>
             <Footer></Footer>
         </div>
     );
