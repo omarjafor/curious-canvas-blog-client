@@ -31,17 +31,17 @@ const Reviews = () => {
 
     return (
         <div
-            className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:pe-0 lg:ps-8 dark:bg-gray-900 mb-12"
+            className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:pe-0 lg:ps-8 bg-gradient-to-br from-rose-400 via-fuchsia-500 to-indigo-500 dark:from-gray-700 dark:via-gray-900 dark:to-black mb-12"
         >
             <div
                 className="grid grid-cols-1 lg:grid-cols-3 lg:items-center lg:gap-16"
             >
-                <div className="max-w-xl px-5 lg:px-0 text-left rtl:sm:text-right">
+                <div className="max-w-xl p-5 lg:px-0 text-left rtl:sm:text-right">
                     <h2 className="text-4xl font-bold tracking-tight drop-shadow-[-1px_2px_0px_rgba(17,131,6,0.6)] bg-gradient-to-br from-green-600 via-blue-500 to-purple-600 bg-clip-text text-transparent sm:text-4xl">
                         Read blogs reviews from our beautiful users
                     </h2>
 
-                    <p className="mt-4 text-base text-justify text-gray-400 dark:text-white">
+                    <p className="mt-4 text-base text-justify text-gray-900 dark:text-white">
                         When users see that their peers have had positive experiences, they are more likely to have confidence in your blog and are more inclined to make a purchase for your blog. This trust is a valuable asset that can lead to increased long-term customer relationships.
                     </p>
                     {loaded && instanceRef.current && (
@@ -106,7 +106,7 @@ const Reviews = () => {
                     <div ref={sliderRef} className="keen-slider">
                         <div className="keen-slider__slide .number-slide1">
                             <blockquote
-                                className="flex h-full max-w-[520px] flex-col justify-evenly bg-white dark:bg-gray-900 p-6 shadow-sm sm:p-8 lg:p-12"
+                                className="flex h-full flex-col justify-evenly bg-gradient-to-br from-rose-400 via-fuchsia-500 to-indigo-500 dark:from-gray-700 dark:via-gray-900 dark:to-black p-6 shadow-sm sm:p-8 lg:p-12"
                             >
                                 <div>
                                     <div className="flex gap-0.5 text-green-500">
@@ -190,7 +190,7 @@ const Reviews = () => {
 
                         <div className="keen-slider__slide .number-slide2">
                             <blockquote
-                                className="flex h-full max-w-[520px] flex-col justify-evenly bg-white dark:bg-gray-900 p-6 shadow-sm sm:p-8 lg:p-12"
+                                className="flex h-full flex-col justify-evenly bg-gradient-to-br from-rose-400 via-fuchsia-500 to-indigo-500 dark:bg-gray-900 p-6 shadow-sm sm:p-8 lg:p-12"
                             >
                                 <div>
                                     <div className="flex gap-0.5 text-green-500">
@@ -274,7 +274,7 @@ const Reviews = () => {
 
                         <div className="keen-slider__slide .number-slide3">
                             <blockquote
-                                className="flex h-full max-w-[520px] flex-col justify-evenly bg-white dark:bg-gray-900 px-6 shadow-sm sm:p-8 lg:p-12"
+                                className="flex h-full flex-col justify-evenly bg-gradient-to-br from-rose-400 via-fuchsia-500 to-indigo-500 dark:bg-gray-900 px-6 shadow-sm sm:p-8 lg:p-12"
                             >
                                 <div>
                                     <div className="flex gap-0.5 text-green-500">
