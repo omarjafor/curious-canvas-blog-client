@@ -11,7 +11,7 @@ const Banner = () => {
                     <div
                         className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:items-center"
                     >
-                        <div className="max-w-xl ltr:sm:text-left rtl:sm:text-right drop-shadow-[-1px_3px_1px_rgba(17,131,6,0.6)] bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 bg-clip-text text-transparent">
+                        <div className="max-w-xl ltr:sm:text-left rtl:sm:text-right drop-shadow-[3px_4px_1px_rgba(17,131,6,0.6)] bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 bg-clip-text text-transparent">
                             <h1 className="text-6xl font-extrabold sm:text-5xl">
                                 Curious Canvas
 
@@ -21,7 +21,7 @@ const Banner = () => {
                             </h1>
 
                             <p className="mt-4 max-w-lg sm:text-xl/relaxed text-black">
-                                Embark on a voyage of discovery with The Explorer Blog. Explore the worlds wonders and share your adventures!
+                                Welcome to Curious Canvas, The canvas of exploration. Unveil your journey with diverse stories, vibrant experiences, and endless discoveries.
                             </p>
 
                             <div className="mt-8 flex flex-wrap gap-4 text-center">

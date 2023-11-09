@@ -190,7 +190,7 @@ const Reviews = () => {
 
                         <div className="keen-slider__slide .number-slide2">
                             <blockquote
-                                className="flex h-full flex-col justify-evenly bg-gradient-to-br from-rose-400 via-fuchsia-500 to-indigo-500 dark:bg-gray-900 p-6 shadow-sm sm:p-8 lg:p-12"
+                                className="flex h-full flex-col justify-evenly bg-gradient-to-br from-rose-400 via-fuchsia-500 to-indigo-500 dark:from-gray-700 dark:via-gray-900 dark:to-black p-6 shadow-sm sm:p-8 lg:p-12"
                             >
                                 <div>
                                     <div className="flex gap-0.5 text-green-500">
@@ -274,7 +274,7 @@ const Reviews = () => {
 
                         <div className="keen-slider__slide .number-slide3">
                             <blockquote
-                                className="flex h-full flex-col justify-evenly bg-gradient-to-br from-rose-400 via-fuchsia-500 to-indigo-500 dark:bg-gray-900 px-6 shadow-sm sm:p-8 lg:p-12"
+                                className="flex h-full flex-col justify-evenly bg-gradient-to-br from-rose-400 via-fuchsia-500 to-indigo-500 dark:from-gray-700 dark:via-gray-900 dark:to-black px-6 shadow-sm sm:p-8 lg:p-12"
                             >
                                 <div>
                                     <div className="flex gap-0.5 text-green-500">
