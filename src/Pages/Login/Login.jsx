@@ -223,28 +223,28 @@ const Login = () => {
                         onClick={handleGoogleLogin}
                         data-ripple-light="true"
                     >
-                        <img src="https://i.ibb.co/5Wy5sXn/google.png" alt="" className="h-12 w-12 mx-auto" />
+                        <img src="https://i.ibb.co/x63CtX9/google.png" alt="" className="h-12 w-12 mx-auto" />
                     </button>
                     <button
                         className="block select-none relative mb-4 place-items-center align-middle"
                         onClick={handleFacebookLogin}
                         data-ripple-light="true"
                     >
-                        <img src="https://i.ibb.co/qsscgfD/facebook.png" alt="" className="h-12 w-12 mx-auto" />
+                        <img src="https://i.ibb.co/ZS1fF3f/facebook.png" alt="" className="h-12 w-12 mx-auto" />
                     </button>
                     <button
                         className="block select-none relative mb-4 place-items-center align-middle"
                         onClick={handleTwitterLogin}
                         data-ripple-light="true"
                     >
-                        <img src="https://i.ibb.co/3rfR0H7/twitter.png" alt="" className="h-12 w-12 mx-auto" />
+                        <img src="https://i.ibb.co/dMQFqV7/twitter.png" alt="" className="h-12 w-12 mx-auto" />
                     </button>
                     <button
                         className="block select-none relative mb-4 place-items-center align-middle"
                         onClick={handleGithubLogin}
                         data-ripple-light="true"
                     >
-                        <img src="https://i.ibb.co/xf4HYnH/github.png" alt="" className="h-12 w-12 mx-auto" />
+                        <img src="https://i.ibb.co/QrTRBBL/github.png" alt="" className="h-12 w-12 mx-auto" />
                     </button>
                 </div>
             </div>
@@ -252,7 +252,7 @@ const Login = () => {
             <div className="relative h-64 w-full sm:h-96 lg:h-full lg:w-1/2">
                 <img
                     alt="Login"
-                    src="https://i.ibb.co/dGmjrZW/Login.jpg"
+                    src="https://i.ibb.co/ZVjZqr5/Login.jpg"
                     className="absolute inset-0 h-full w-full object-cover"
                 />
             </div>

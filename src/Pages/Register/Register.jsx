@@ -67,7 +67,7 @@ const Register = () => {
                 >
                     <img
                         alt="Register"
-                        src="https://i.ibb.co/J7B0f4y/long-form-content-1024x576.png"
+                        src="https://i.ibb.co/23xKqn0/register.jpg"
                         className="absolute inset-0 h-full w-full object-cover opacity-80"
                     />
 
