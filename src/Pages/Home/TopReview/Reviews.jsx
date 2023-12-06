@@ -180,7 +180,7 @@ const Reviews = () => {
                                 <footer className="mt-4 text-base font-medium text-gray-700 dark:text-white sm:mt-6">
                                     <div className="avatar">
                                         <div className="w-24 rounded-full">
-                                            <img src="https://i.ibb.co/BBR8KFW/blonde-girl.webp" />
+                                            <img src="https://i.ibb.co/M7sQSqv/male.webp" />
                                         </div>
                                     </div>
                                     &mdash; Sarah Mines
