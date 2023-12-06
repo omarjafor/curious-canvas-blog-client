@@ -42,7 +42,7 @@ const Banner = () => {
                         </div>
                     </div>
                     <div className="w-full lg:w-1/2 justify-center align-bottom lg:mt-28">
-                        <img className="" src="https://i.ibb.co/gm0NJvs/wishlist.webp" alt="" />
+                        <img className="" src="https://i.ibb.co/7Rbfzxq/wishlist.webp" alt="" />
                     </div>
                 </div>
             </section>

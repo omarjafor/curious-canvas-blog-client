@@ -22,18 +22,18 @@ const FramerMotion = () => {
     const items = [
         {
             id: '1',
-            image: "https://i.ibb.co/wd97pgZ/Exploring-Paradise.jpg",
+            image: "https://i.ibb.co/HDjdCLn/Exploring-Paradise.jpg",
             category: "Travel",
             title: "Exploring Paradise The Latest Travel Trends",
             shortDes: "A journey through breathtaking landscapes travel guides, personal travel stories the beauty of nature like never before as.",
             longDes: "Experience the beauty of nature like never before as we journey through picturesque landscapes and hidden gems. Embark on thrilling adventures, explore new destinations, and gather travel inspiration. Discover hidden gems with our comprehensive travel guides, personal travel stories, and pro tips from globetrotters",
             time: "30 min ago",
-            comment: 8
+            comment: 18
             
         },
         {
             id: '2',
-            image: "https://i.ibb.co/qRbkd1T/Culinary-Delights.jpg",
+            image: "https://i.ibb.co/PjzbrHr/Culinary-Delights.jpg",
             category: "Food&Cooking",
             title: "Exploring Culinary Delights Around the World",
             shortDes: "Savor the flavors of world cuisine cooking secrets, and food explorations from around the world our culinary experts and indulge.",
@@ -43,17 +43,17 @@ const FramerMotion = () => {
         },
         {
             id: '3',
-            image: "https://i.ibb.co/Vj52Q1c/Innovation-Unleashed.jpg",
+            image: "https://i.ibb.co/jzKF9qK/Innovation-Unleashed.jpg",
             category: "Technology",
             title: "Innovation unleashed revolutionised services",
             shortDes: "Exploring the latest tech innovations insightful reviews. Stay tech-savvy with in-depth articles, gadget reviews",
             longDes: "Stay up to date with cutting-edge technology and innovations shaping our future. Delve into the world of technology with the latest gadgets, tech trends, and insightful reviews. Stay tech-savvy with in-depth articles, gadget reviews, and expert opinions on emerging tech.",
             time: "2 hours ago",
-            comment: 5
+            comment: 15
         },
         {
             id: '4',
-            image: "https://i.ibb.co/nMRQfrG/Snapinsta-fasion.jpg",
+            image: "https://i.ibb.co/5kByyxs/Snapinsta-fasion.jpg",
             category: "Fashion",
             title: "Trends and Styles Fashion week a runway show",
             shortDes: "Discover the latest fashion trends fashion trends and style inspirations for every season. Explore the latest fashion trends.",
@@ -63,7 +63,7 @@ const FramerMotion = () => {
         },
         {
             id: '5',
-            image: "https://i.ibb.co/9T6NQd8/Technology-Gadgets.jpg",
+            image: "https://i.ibb.co/jzKF9qK/Innovation-Unleashed.jpg",
             category: "Tech Gadgets",
             title: "Modern Technology Gadgets to Check",
             shortDes: "Catch the thrilling sports action gain profound insights into the ever-evolving tech landscape, tech giants the world of technology.",
@@ -73,13 +73,13 @@ const FramerMotion = () => {
         },
         {
             id: '6',
-            image: "https://i.ibb.co/2k46rhF/frying-pan.jpg",
+            image: "https://i.ibb.co/1KbKySg/frying-pan.jpg",
             category: "Food&Cooking",
             title: "Frying burning food fire inside is like Entertainment",
             shortDes: "Get the latest showbiz updates the hottest celebrity news and entertainment buzz from the world of showbiz.",
             longDes: "Stay in the loop with the hottest celebrity news and entertainment buzz from the world of showbiz. Experience a world of gourmet delights, culinary craftsmanship, and global cuisine exploration. Dive into the culinary arts with expert chefs and savor the finest flavors from diverse cultures.",
             time: "5 hours ago",
-            comment: 7
+            comment: 17
         },
     ];
 
