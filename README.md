@@ -1,6 +1,9 @@
 # # React Full Stack Blog Website Application
 
-## [ Live Link](https://blog-website-omarjafor.web.app/)
+## [Live Link](https://curious-canvas.web.app/)
+
+### Technology Used: 
+#### React.js, Node.js, Mongodb, Express, Jwt, Firebase, Tailwind.
 
 ### &rarr; Curious Canvas Blog Website Features ?
 
