@@ -3,7 +3,7 @@
 ## [Live Link](https://curious-canvas.web.app/)
 
 ### Technology Used: 
-#### React.js, Node.js, Mongodb, Express, Jwt, Firebase, Tailwind.
+#### React.js, React Router, Node.js, Mongodb, Express, Jwt, Firebase, Tailwind, Framer Motion, Aos, React Table, Tanstack Query, React Helmet.
 
 ### &rarr; Curious Canvas Blog Website Features ?
 
