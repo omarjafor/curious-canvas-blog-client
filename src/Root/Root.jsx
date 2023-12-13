@@ -6,7 +6,7 @@ import ScrollToTop from "../Components/Scroll/ScrollToTop";
 
 const Root = () => {
     return (
-        <div>
+        <div className="dark:bg-gray-900">
             <ScrollToTop></ScrollToTop>
             <Navbar></Navbar>
             <Outlet className="overflow-x-hidden"></Outlet>
