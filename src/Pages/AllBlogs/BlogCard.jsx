@@ -110,7 +110,7 @@ const BlogCard = ({ blog }) => {
                         </div>
                     </div>
                     <PhotoView src={photo}>
-                        <img src={photo} alt="" className="mb-6 shadow-md rounded-lg bg-slate-50 w-full sm:w-[17rem] sm:mb-0 xl:mb-6 xl:w-full" width="1216" height="640" style={{ objectFit: 'cover' }} />
+                        <img src={photo} alt="" className="mb-6 shadow-md rounded-lg bg-slate-50 w-full max-h-[350px] sm:w-[17rem] sm:mb-0 xl:mb-6 xl:w-full" width="1216" height="640" style={{ objectFit: 'cover' }} />
                     </PhotoView>
                 </div>
             </div>
